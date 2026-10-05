@@ -57,3 +57,72 @@ h2{font-size:clamp(34px,4vw,54px);line-height:1.08;letter-spacing:-.05em;margin:
 .footer{border-top:1px solid var(--line);padding:24px 0;color:#777d8b;font-size:11px}.footer-inner{display:flex;justify-content:space-between}
 @media(max-width:900px){.hero-grid,.two-col{grid-template-columns:1fr;gap:55px}.hero-card{height:420px}.skill-grid{grid-template-columns:repeat(2,1fr)}.contact-card{flex-direction:column;align-items:flex-start}.contact-actions{justify-content:flex-start}.section-heading{display:block}.section-heading p{margin-top:12px}}
 @media(max-width:680px){.container{width:min(calc(100% - 28px),var(--max))}.nav-links{display:none;position:absolute;top:74px;left:0;width:100%;background:#0a0b0f;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.menu-toggle{display:block}.hero{padding-top:125px}.hero-card{height:360px}.data-window{height:285px}.project-grid,.skill-grid{grid-template-columns:1fr}.quick-stats{gap:18px}.quick-stats strong{font-size:17px}.contact-card{padding:32px 24px}.footer-inner{gap:15px;flex-direction:column}}
+/* Certifications */
+.certifications {
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+}
+
+.certifications .container {
+    display: block;
+}
+
+.certifications h2 {
+    max-width: 750px;
+}
+
+.certification-card {
+    margin-top: 40px;
+    padding: 35px 40px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.certification-type {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    margin-bottom: 8px;
+}
+
+.certification-card h3 {
+    font-size: 24px;
+    letter-spacing: -.03em;
+    margin-bottom: 8px;
+}
+
+.certification-card p:not(.certification-type) {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.certification-card .btn {
+    flex-shrink: 0;
+}
+
+/* Keep Contact as its own section */
+.contact-section {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.contact-section .container {
+    display: block;
+}
+
+/* Mobile */
+@media(max-width:680px) {
+    .certification-card {
+        padding: 28px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
