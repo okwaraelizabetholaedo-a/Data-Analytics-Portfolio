@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Outcomes Analysis | Elizabeth Ibem</title>
+
+    <style>
+        :root {
+            --bg: #080b0c;
+            --surface: #0e1315;
+            --surface-2: #12191b;
+            --line: rgba(255,255,255,0.10);
+            --text: #f3f5f4;
+            --muted: #9aa5a7;
+            --accent: #b8ff00;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            background: rgba(8,11,12,0.95);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .back-link {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        main {
+            padding: 70px 0 100px;
+        }
+
+        .hero {
+            max-width: 850px;
+            margin-bottom: 55px;
+        }
+
+        .kicker {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            line-height: 1;
+            margin: 0 0 20px;
+            letter-spacing: -0.04em;
+        }
+
+        .tools {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 20px;
+            color: #d8dddd;
+            max-width: 780px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 45px 0 70px;
+        }
+
+        .metric {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .metric strong {
+            display: block;
+            color: var(--accent);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .metric span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        section {
+            margin-top: 70px;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 34px;
+            margin: 0 0 18px;
+        }
+
+        .copy {
+            max-width: 800px;
+            color: #c2c9ca;
+            font-size: 17px;
+        }
+
+        .dashboard {
+            margin-top: 28px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 14px;
+        }
+
+        .dashboard img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .findings {
+            display: grid;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .finding {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px 22px;
+            color: #d5dcdd;
+        }
+
+        .note {
+            margin-top: 25px;
+            padding: 18px 20px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .bottom-nav {
+            margin-top: 90px;
+            padding-top: 30px;
+            border-top: 1px solid var(--line);
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 30px 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav {
+                padding: 15px 0;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: min(100% - 28px, 1100px);
+            }
+
+            main {
+                padding-top: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+        <a href="index.html" class="brand">
+            Elizabeth <span>Ibem</span>
+        </a>
+
+        <a href="index.html#projects" class="back-link">
+            ← Back to Projects
+        </a>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+
+        <div class="hero">
+            <div class="kicker">Healthcare • Power BI • DAX</div>
+
+            <h1>Breast Cancer Outcomes Analysis</h1>
+
+            <div class="tools">
+                Power BI · DAX · Power Query
+            </div>
+
+            <p class="intro">
+                An interactive healthcare analytics project exploring patient
+                characteristics, cancer progression, tumour features,
+                lymph-node involvement, hormone receptor status and recorded
+                survival outcomes.
+            </p>
+        </div>
+
+        <div class="metrics">
+
+            <div class="metric">
+                <strong>4,024</strong>
+                <span>Patient records</span>
+            </div>
+
+            <div class="metric">
+                <strong>84.7%</strong>
+                <span>Recorded survival — 3,408 alive and 616 deceased</span>
+            </div>
+
+            <div class="metric">
+                <strong>7.4% → 38.3%</strong>
+                <span>Recorded mortality from Stage IIA to IIIC</span>
+            </div>
+
+            <div class="metric">
+                <strong>13.5% vs 40.1%</strong>
+                <span>Recorded mortality — ER-positive vs ER-negative</span>
+            </div>
+
+        </div>
+
+        <section>
+            <div class="section-label">01 / Overview</div>
+            <h2>About the project</h2>
+
+            <p class="copy">
+                The project uses three interactive dashboards to examine
+                demographic and clinical characteristics alongside cancer
+                progression and recorded outcomes. The analysis covers
+                tumour size and grade, cancer stage, lymph-node involvement,
+                hormone receptor status and survival.
+            </p>
+        </section>
+
+        <section>
+            <div class="section-label">02 / Dashboard</div>
+            <h2>Main Dashboard</h2>
+
+            <div class="dashboard">
+                <img
+                    src="ASSETS/breast-cancer-main.jpeg"
+                    alt="Breast Cancer Outcomes Analysis main dashboard">
+            </div>
+        </section>
+
+        <section>
+            <div class="section-label">03 / Additional Analysis</div>
+            <h2>Secondary Dashboard</h2>
+
+            <div class="dashboard">
+                <img
+                    src="ASSETS/breast-cancer-secondary.jpeg"
+                    alt="Breast Cancer Outcomes Analysis secondary dashboard">
+            </div>
+        </section>
+
+        <section>
+            <div class="section-label">04 / Insights</div>
+            <h2>Key Findings</h2>
+
+            <div class="findings">
+
+                <div class="finding">
+                    Recorded mortality increased with lymph-node involvement,
+                    rising from 9.9% among patients with 1–3 positive nodes
+                    to 37.5% among patients with 10 or more positive nodes.
+                </div>
+
+                <div class="finding">
+                    Differences appeared across age, race and marital-status
+                    groups, highlighting areas that may warrant deeper
+                    investigation into access, diagnosis and outcomes.
+                </div>
+
+            </div>
+
+            <div class="note">
+                These findings describe patterns within this dataset and
+                should not be interpreted as proof of causation or as
+                population-level cancer risk.
+            </div>
+        </section>
+
+        <div class="bottom-nav">
+            <a href="index.html#projects" class="back-link">
+                ← Back to all projects
+            </a>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        © 2026 Elizabeth Ibem · Data Analyst
+    </div>
+</footer>
+
+</body>
+</html>
